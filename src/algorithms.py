@@ -1,5 +1,6 @@
 from scipy.optimize import linear_sum_assignment as hungarian_algorithm
-from logger_config import logger
+from logger_config import setup_logger
+logger = setup_logger(__name__)
 
 def hungarian_matching(cost_matrix):
 	try:

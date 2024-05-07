@@ -1,6 +1,7 @@
 from .algorithms import hungarian_matching
 from datetime import datetime
-from logger_config import logger
+from logger_config import setup_logger
+logger = setup_logger(__name__)
 
 
 def manhattan_distance(point1, point2):
