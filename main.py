@@ -1,9 +1,11 @@
 from src.animation import initialize_pygame, wait_for_pygame_to_end
-from src.process_matching import process_atom_rearrangement
+from src.process_matching import process_atom_rearrangement, get_input_matrix
+
 
 def main():
-	animation_window = initialize_pygame()
-	process_atom_rearrangement(animation_window)
+	input_matrix, target_matrix = get_input_matrix()
+	animation_window = initialize_pygame(len(input_matrix), len(input_matrix[0]))
+	process_atom_rearrangement(animation_window, input_matrix, target_matrix)
 	wait_for_pygame_to_end()
 
 

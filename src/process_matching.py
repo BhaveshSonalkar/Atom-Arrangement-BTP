@@ -14,10 +14,13 @@ def read_matrix(file_name):
 	return matrix
 
 
-def process_atom_rearrangement(animation_window):
+def get_input_matrix():
 	input_matrix = read_matrix("inputs/input_matrix.txt")
 	target_matrix = read_matrix("inputs/target_matrix.txt")
+	return input_matrix, target_matrix
 
+
+def process_atom_rearrangement(animation_window, input_matrix, target_matrix):
 	#Initialize the animation window
 	atom_array = initialize_atoms_for_animation(input_matrix)
 

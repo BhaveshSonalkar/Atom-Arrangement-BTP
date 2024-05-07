@@ -11,8 +11,6 @@ ATOM_COLOR = (255, 0, 0)  # Red
 #define cell width and height
 CELL_WIDTH = 50
 CELL_HEIGHT = 50
-GRID_SIZE = 10
-
 
 class Atom:
 	def __init__(self, row, col):
@@ -61,10 +59,10 @@ def initialize_atoms_for_animation(input_matrix):
 		return None
 
 
-def initialize_pygame():
+def initialize_pygame(grid_size_row, grid_size_col):
 	try:
 		pygame.init()
-		window = pygame.display.set_mode((GRID_SIZE * CELL_WIDTH, GRID_SIZE * CELL_HEIGHT))
+		window = pygame.display.set_mode((grid_size_row * CELL_HEIGHT, grid_size_col * CELL_WIDTH))
 		pygame.display.set_caption("Atom Animation")
 		window.fill(BLACK)
 		return window
