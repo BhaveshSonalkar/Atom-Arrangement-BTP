@@ -1,9 +1,9 @@
 import logging
 
 
-def setup_logger(log_file="log.txt"):
+def setup_logger(logger_name, log_file="log.txt"):
 	# Create logger
-	logger = logging.getLogger(__name__)
+	logger = logging.getLogger(str(logger_name))
 	logger.setLevel(logging.DEBUG)
 
 	# Define formatter
@@ -24,7 +24,3 @@ def setup_logger(log_file="log.txt"):
 	logger.addHandler(fh)
 
 	return logger
-
-
-# Set up the logger
-logger = setup_logger()
