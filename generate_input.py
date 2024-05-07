@@ -24,13 +24,7 @@ if not os.path.exists(input_dir):
 # Generate input matrix
 input_matrix = generate_matrix(rows, cols)
 
-# Generate target matrix
-target_matrix = generate_matrix(rows, cols)
-
 # Write input matrix to file
 write_matrix(input_matrix, os.path.join(input_dir, 'input_matrix.txt'))
 
-# Write target matrix to file
-write_matrix(target_matrix, os.path.join(input_dir, 'target_matrix.txt'))
-
-print("Matrices written to files: input_matrix.txt and target_matrix.txt")
+print("Matrices written to files: input_matrix.txt")
