@@ -32,4 +32,4 @@ def generate_and_write_matrices(rows, cols):
 
 
 # Example usage:
-generate_and_write_matrices(20, 20)
+generate_and_write_matrices(10, 10)
