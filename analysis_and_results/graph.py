@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # List of CSV files to read
-file_list = ['hungarian.csv', 'greedy.csv']
+file_list = ['hungarian.csv', 'greedy.csv', 'greedy_row.csv']
 
 # Create a figure and axis object
 fig, ax = plt.subplots(figsize=(12, 6))
@@ -18,9 +18,6 @@ for file in file_list:
     grid_size = data['grid size']
     #time_taken = data['time taken for matching(in microseconds)']
     steps = data['steps']
-    for i in range(len(steps)):
-        if steps[i] != 0:
-            steps[i] = log(steps[i])
     # Plot the data
     ax.plot(grid_size, steps, marker='o', label=file.split('.')[0])
 

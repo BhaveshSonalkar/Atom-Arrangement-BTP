@@ -15,7 +15,7 @@ def run_algorithm_and_get_results(file_name, algorithm_name):
 			if file.tell() == 0:
 				writer.writerow(['algorithm', 'grid size', 'steps', 'time taken for matching(in microseconds)'])
 
-			for i in range(1, 100):
+			for i in range(2, 100):
 				total_steps = 0
 				time_time = 0
 				for j in range(10):
