@@ -45,8 +45,8 @@ def get_cost_matrix(input_matrix, target_matrix):
 def get_optimal_matching(cost_matrix):
 	try:
 		#Run the Hungarian Algorithm
-		#row_index, column_index = hungarian_matching(cost_matrix)
-		row_index, column_index = greedy_row_minimum_weight_selection(cost_matrix)
+		row_index, column_index = hungarian_matching(cost_matrix)
+		#row_index, column_index = greedy_row_minimum_weight_selection(cost_matrix)
 		#row_index, column_index = greedy_global_minimum_weight_selection(cost_matrix)
 		logger.info(f"Optimal matching successfully found")
 		return row_index, column_index
