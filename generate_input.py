@@ -29,7 +29,3 @@ def generate_and_write_matrices(rows, cols):
 	write_matrix(target_matrix, os.path.join(input_dir, 'target_matrix.txt'))
 
 	print("Matrices written to files: input_matrix.txt, target_matrix.txt")
-
-
-# Example usage:
-generate_and_write_matrices(10, 10)

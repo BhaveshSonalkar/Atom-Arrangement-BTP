@@ -18,7 +18,7 @@ def read_matrix(file_name):
 def get_input_matrix():
 	input_matrix = read_matrix("inputs/input_matrix.txt")
 	target_matrix = read_matrix("inputs/target_matrix.txt")
-	return input_matrix, target_matrix
+	return [input_matrix, target_matrix]
 
 
 def process_atom_rearrangement(animation_window, input_matrix, target_matrix):

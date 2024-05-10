@@ -38,7 +38,7 @@ def move_atom_animation(window, atom_array, source_coordinate, target_coordinate
 					atom.y += (target_coordinate[0] - source_coordinate[0]) * CELL_HEIGHT / no_of_steps
 				atom.draw(window)
 			pygame.display.update()
-			pygame.time.delay(1)
+			pygame.time.delay(10)
 		atom_to_move.row = target_coordinate[0]
 		atom_to_move.col = target_coordinate[1]
 	except Exception as e:
