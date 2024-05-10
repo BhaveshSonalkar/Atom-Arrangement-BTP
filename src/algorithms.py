@@ -32,11 +32,3 @@ def greedy_global_minimum_weight_selection(cost_matrix):
 			visited_columns.add(j)
 
 	return row_index, column_index
-
-
-def random_matching(cost_matrix):
-	# Random Matching of cost matrix
-	row_index = list(range(len(cost_matrix)))
-	column_index = list(range(len(cost_matrix[0])))
-	random.shuffle(column_index)
-	return row_index, column_index

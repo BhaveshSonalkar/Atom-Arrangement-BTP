@@ -1,3 +1,4 @@
+from analysis_and_results.get_results import run_algorithm_and_get_results
 from src.animation import initialize_pygame, wait_for_pygame_to_end
 from src.process_matching import process_atom_rearrangement, get_input_matrix
 
