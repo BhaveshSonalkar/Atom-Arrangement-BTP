@@ -23,7 +23,7 @@ def get_cost_matrix(input_matrix, target_matrix):
 		misplaced_atoms = []
 		empty_sites = []
 		for i in range(len(input_matrix)):
-			for j in range(len(input_matrix[0])):
+			for j in range(len(input_matrix[i])):
 				if input_matrix[i][j] == 1 and target_matrix[i][j] == 0:
 					misplaced_atoms.append([i, j])
 				if input_matrix[i][j] == 0 and target_matrix[i][j] == 1:
