@@ -28,9 +28,15 @@ def process_atom_rearrangement(animation_window, input_matrix, target_matrix):
 	# Perform the optimal matching
 	matching_start_time = datetime.now().microsecond
 	cost_matrix, misplaced_atoms, empty_sites = get_cost_matrix(input_matrix, target_matrix)
+	if len(misplaced_atoms) == 0:
+		logger.info(f"No atoms to move")
+		return 0, 0
+
 	misplaced_atom_index, empty_site_index = get_optimal_matching(cost_matrix)
 	matching_end_time = datetime.now().microsecond
-	logger.info(f"Time taken to find matching: {matching_end_time - matching_start_time}")
+
+	time_taken_for_matching = matching_end_time - matching_start_time
+	logger.info(f"Time taken to find matching: {time_taken_for_matching}")
 
 	total_steps = 0
 	# Find Path and move the atoms
@@ -44,4 +50,4 @@ def process_atom_rearrangement(animation_window, input_matrix, target_matrix):
 		logger.info(f"Path: {path}")
 
 	logger.info(f"Total Steps: {total_steps}")
-	return total_steps
+	return total_steps, time_taken_for_matching
