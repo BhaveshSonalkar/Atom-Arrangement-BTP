@@ -27,7 +27,7 @@ class Atom:
 
 def move_atom_animation(window, atom_array, source_coordinate, target_coordinate):
 	try:
-		no_of_steps = 100
+		no_of_steps = 10
 		atom_to_move = None
 		for _ in range(no_of_steps):
 			window.fill(BLACK)

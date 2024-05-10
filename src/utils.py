@@ -1,4 +1,4 @@
-from .algorithms import hungarian_matching
+from .algorithms import hungarian_matching, greedy_global_minimum_weight_selection, random_matching
 from datetime import datetime
 from logger_config import setup_logger
 logger = setup_logger(__name__)
@@ -6,6 +6,16 @@ logger = setup_logger(__name__)
 
 def manhattan_distance(point1, point2):
 	return abs(point1[0] - point2[0]) + abs(point1[1] - point2[1])
+
+
+def euclidean_distance(point1, point2):
+	return ((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2) ** 0.5
+
+
+def weight_function(point1, point2):
+	return manhattan_distance(point1, point2)
+	#return euclidean_distance(point1, point2)
+	#return manhattan_distance(point1, point2) ** 2
 
 
 def get_cost_matrix(input_matrix, target_matrix):
@@ -23,7 +33,7 @@ def get_cost_matrix(input_matrix, target_matrix):
 		for misplaced_atom in misplaced_atoms:
 			row = []
 			for empty_site in empty_sites:
-				row.append(manhattan_distance(misplaced_atom, empty_site))
+				row.append(weight_function(misplaced_atom, empty_site))
 			cost_matrix.append(row)
 
 		logger.info(f"Cost matrix successfully created: {cost_matrix}")
@@ -36,6 +46,8 @@ def get_optimal_matching(cost_matrix):
 	try:
 		# Run the Hungarian Algorithm
 		row_index, column_index = hungarian_matching(cost_matrix)
+		# row_index, column_index = greedy_global_minimum_weight_selection(cost_matrix)
+		# row_index, column_index = random_matching(cost_matrix)
 		logger.info(f"Optimal matching successfully found")
 		return row_index, column_index
 	except Exception as e:
